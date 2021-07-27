@@ -76,12 +76,9 @@ a {
   font-weight: 600;
 }
 
-#gitLink {
-  color: white;
-}
-
 a:hover {
   text-decoration: none;
+  color: black;
 }
 
 .weekly {
