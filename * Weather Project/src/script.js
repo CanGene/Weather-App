@@ -1,3 +1,5 @@
+//common variables
+
 let now = new Date();
 let days = [
   "Sunday",
