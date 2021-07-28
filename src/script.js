@@ -44,14 +44,14 @@ function showCityTemperature(response) {
     event.preventDefault();
     presentTemp.innerHTML = `${temperature}`;
   }
+  let celLink = document.querySelector("#celsius");
+  celLink.addEventListener("click", toCelsius);
+
   function toFahrenheit(event) {
     event.preventDefault();
     let fahrenheit = Math.round(temperature * 1.8 + 32);
     presentTemp.innerHTML = `${fahrenheit}`;
   }
-
-  let celLink = document.querySelector("#celsius");
-  celLink.addEventListener("click", toCelsius);
   let fahLink = document.querySelector("#fahrenheit");
   fahLink.addEventListener("click", toFahrenheit);
 }
