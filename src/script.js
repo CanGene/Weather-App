@@ -35,11 +35,17 @@ function showCityTemperature(response) {
   console.log(response);
   let displayName = `${response.data.name}`;
   let city = document.querySelector("#city");
-  city.innerHTML = `${displayName}`;
   let temperature = Math.round(response.data.main.temp);
-  presentTemp.innerHTML = `${temperature}`;
   let description = document.querySelector("#description");
+  let precipitation = document.querySelector("#precipitation");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+  city.innerHTML = `${displayName}`;
+  presentTemp.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
+  precipitation.innerHTML = Math.round(response.data.rain);
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
 
   function toCelsius(event) {
     event.preventDefault();
