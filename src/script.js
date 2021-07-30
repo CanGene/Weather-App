@@ -1,5 +1,4 @@
 //common variables
-
 let now = new Date();
 let days = [
   "Sunday",
@@ -39,6 +38,8 @@ function showCityTemperature(response) {
   city.innerHTML = `${displayName}`;
   let temperature = Math.round(response.data.main.temp);
   presentTemp.innerHTML = `${temperature}`;
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
 
   function toCelsius(event) {
     event.preventDefault();
