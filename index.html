@@ -50,7 +50,7 @@
                   <button class="btn btn-outline-dark" type="submit">
                     Search
                   </button>
-                  <button type="button" class="btn btn-light" id="here">
+                  <button type="button" class="btn btn-dark" id="here">
                     Here!
                   </button>
                 </form>
@@ -74,27 +74,23 @@
                         </span>
                       </h2>
                       <div class="day-time">
-                        <h4>
-                          <div id="date">Saturday</div>
-                          <div id="time">1:00</div>
-                        </h4>
+                        <div id="description">__________</div>
                       </div>
                       <ul>
                         <li class="Precipitation">
-                          Precipitation: <span id="precipitation">0</span>%
+                          Precipitation: <span id="precipitation">___</span> mm
                         </li>
                         <li class="Humidity">
                           Humidity: <span id="humidity">___</span>%
                         </li>
                         <li class="Wind">
-                          Wind: <span id="wind"> ___ </span> km/h
+                          Wind: <span id="wind"> ___ </span> m/s
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <i class="fas fa-cloud-sun-rain weather-icon-today"></i>
-                    <div id="description">__________</div>
                   </div>
                 </div>
                 <div class="row hourly">
@@ -186,10 +182,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-md-6">
+            <div id="date">______</div>
+            <div id="timeUpdate"><span id="time"></span> Last updated</div>
+          </div>
+          <div class="col-md-6">
             <footer>
               <p>
-                <a href="https://github.com/CanGene/Weather-App" id="gitLink">
+                <a href="https://github.com/CanGene/Weather-App" id="credit">
                   Open-source code
                 </a>
                 by Candace Genesis

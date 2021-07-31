@@ -42,10 +42,17 @@ function showCityTemperature(response) {
   let wind = document.querySelector("#wind");
   city.innerHTML = `${displayName}`;
   presentTemp.innerHTML = `${temperature}`;
-  description.innerHTML = response.data.weather[0].description;
-  precipitation.innerHTML = Math.round(response.data.rain);
-  humidity.innerHTML = response.data.main.humidity;
-  wind.innerHTML = Math.round(response.data.wind.speed);
+  description.innerHTML = `${response.data.weather[0].description}`;
+  humidity.innerHTML = `${response.data.main.humidity}`;
+  wind.innerHTML = `${response.data.wind.speed}`;
+
+  let precipitationValue = `${response.data.rain["1h"]}`;
+  console.log(precipitationValue);
+  if (precipitationValue !== undefined) {
+    precipitation.innerHTML = precipitationValue;
+  } else {
+    precipitation.innerHTML = `--`;
+  }
 
   function toCelsius(event) {
     event.preventDefault();

@@ -30,15 +30,14 @@ footer {
 }
 a {
   text-decoration: underline;
-  color: black;
   font-weight: 600;
-}
-a #celsius #fahrenheit {
-  color: black;
 }
 a:hover {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+button {
+  transition: all 200ms ease-in-out;
 }
 #here {
   margin: 0px auto;
@@ -50,10 +49,16 @@ a:hover {
   color: black;
 }
 #description {
-  text-align: center;
   margin-top: 12px;
+  margin-bottom: 12px;
   font-weight: 500;
   text-transform: capitalize;
+}
+#timeUpdate {
+  font-size: 10px;
+}
+#time {
+  font-size: 24px;
 }
 .viewport-header {
   position: relative;
