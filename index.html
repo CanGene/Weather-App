@@ -73,12 +73,10 @@
                           <a href="" id="fahrenheit">°F</a>
                         </span>
                       </h2>
-                      <div class="day-time">
-                        <div id="description">__________</div>
-                      </div>
+                      <h3 id="description">__________</h3>
                       <ul>
                         <li class="Precipitation">
-                          Precipitation: <span id="precipitation">___</span> mm
+                          Precipitation: <span id="precipitation">--</span> mm
                         </li>
                         <li class="Humidity">
                           Humidity: <span id="humidity">___</span>%
@@ -182,9 +180,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <div id="date">______</div>
-            <div id="timeUpdate"><span id="time"></span> Last updated</div>
+          <div class="col-md-6 time-date">
+            <span id="date"></span>
+            <span id="time"></span>
+            <span id="timeUpdate"> Last updated</span>
           </div>
           <div class="col-md-6">
             <footer>
@@ -192,7 +191,7 @@
                 <a href="https://github.com/CanGene/Weather-App" id="credit">
                   Open-source code
                 </a>
-                by Candace Genesis
+                <span> by Candace Genesis </span>
               </p>
             </footer>
           </div>

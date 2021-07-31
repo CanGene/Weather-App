@@ -45,11 +45,8 @@ function showCityTemperature(response) {
   description.innerHTML = `${response.data.weather[0].description}`;
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
-
-  let precipitationValue = `${response.data.rain["1h"]}`;
-  console.log(precipitationValue);
-  if (precipitationValue !== undefined) {
-    precipitation.innerHTML = precipitationValue;
+  if (precipitation !== undefined) {
+    precipitation.innerHTML = `${response.data.rain["1h"]}`;
   } else {
     precipitation.innerHTML = `--`;
   }
