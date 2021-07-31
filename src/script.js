@@ -37,12 +37,18 @@ function showCityTemperature(response) {
   let city = document.querySelector("#city");
   let temperature = Math.round(response.data.main.temp);
   let description = document.querySelector("#description");
-  let precipitation = document.querySelector("#precipitation");
+  let nowIcon = document.querySelector("#weather-icon-now");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
+  let precipitation = document.querySelector("#precipitation");
   city.innerHTML = `${displayName}`;
   presentTemp.innerHTML = `${temperature}`;
   description.innerHTML = `${response.data.weather[0].description}`;
+  nowIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
   if (precipitation !== undefined) {
