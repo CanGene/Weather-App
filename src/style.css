@@ -30,7 +30,7 @@ footer {
   color: white;
 }
 a {
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 600;
 }
 a:hover {
@@ -94,6 +94,13 @@ button {
   vertical-align: top;
   line-height: 28px;
   font-weight: 800;
+}
+.units .active {
+  color: black;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
 }
 .weekly {
   border: solid 1px black;

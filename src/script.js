@@ -1,4 +1,3 @@
-//common variables
 let now = new Date();
 let days = [
   "Sunday",
@@ -11,8 +10,6 @@ let days = [
 ];
 let apiKey = `4a9fc63d5c00d460d1556f4ff9c82bf2`;
 let presentTemp = document.querySelector("#temp-number");
-
-//time
 
 function displayTime() {
   let presentHour = now.getHours();
@@ -29,20 +26,18 @@ function displayDay() {
 }
 displayDay();
 
-//display searched city and temperature
-
 function showCityTemperature(response) {
   console.log(response);
   let displayName = `${response.data.name}`;
   let city = document.querySelector("#city");
-  let temperature = Math.round(response.data.main.temp);
+  cityTemp = Math.round(response.data.main.temp);
   let description = document.querySelector("#description");
   let nowIcon = document.querySelector("#weather-icon-now");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let precipitation = document.querySelector("#precipitation");
   city.innerHTML = `${displayName}`;
-  presentTemp.innerHTML = `${temperature}`;
+  presentTemp.innerHTML = `${cityTemp}`;
   description.innerHTML = `${response.data.weather[0].description}`;
   nowIcon.setAttribute(
     "src",
@@ -51,27 +46,33 @@ function showCityTemperature(response) {
   nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
-  if (precipitation !== undefined) {
-    precipitation.innerHTML = `${response.data.rain["1h"]}`;
-  } else {
+  if (precipitation === undefined) {
     precipitation.innerHTML = `--`;
+  } else {
+    precipitation.innerHTML = `${response.data.rain["1h"]}`;
   }
-
-  function toCelsius(event) {
-    event.preventDefault();
-    presentTemp.innerHTML = `${temperature}`;
-  }
-  let celLink = document.querySelector("#celsius");
-  celLink.addEventListener("click", toCelsius);
-
-  function toFahrenheit(event) {
-    event.preventDefault();
-    let fahrenheit = Math.round(temperature * 1.8 + 32);
-    presentTemp.innerHTML = `${fahrenheit}`;
-  }
-  let fahLink = document.querySelector("#fahrenheit");
-  fahLink.addEventListener("click", toFahrenheit);
 }
+
+function toFahrenheit(event) {
+  event.preventDefault();
+  celLink.classList.remove("active");
+  fahLink.classList.add("active");
+  let fahrenheit = Math.round(cityTemp * 1.8 + 32);
+  presentTemp.innerHTML = `${fahrenheit}`;
+}
+let fahLink = document.querySelector("#fahrenheit");
+fahLink.addEventListener("click", toFahrenheit);
+
+function toCelsius(event) {
+  event.preventDefault();
+  celLink.classList.add("active");
+  fahLink.classList.remove("active");
+  presentTemp.innerHTML = cityTemp;
+}
+let celLink = document.querySelector("#celsius");
+celLink.addEventListener("click", toCelsius);
+
+let cityTemp = null;
 
 function showCity(event) {
   event.preventDefault();
@@ -81,8 +82,6 @@ function showCity(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showCity);
-
-//display current location and temperature
 
 function showCurrentLocation(position) {
   let lat = position.coords.latitude;
