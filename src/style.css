@@ -9,10 +9,20 @@ video {
   position: fixed;
   top: 0;
   left: 0;
-  filter: grayscale(0%);
+}
+h1 {
+  font-weight: 500;
+}
+h2 {
+  font-weight: 500;
 }
 h3 {
+  font-weight: 400;
   line-height: 1.5;
+  padding: 0;
+}
+h4 {
+  font-weight: 500;
 }
 h5 {
   line-height: 1.5;
@@ -22,12 +32,17 @@ ul {
   padding-left: 0;
 }
 li {
+  font-weight: 400;
   list-style: none;
 }
 footer {
   text-align: right;
   font-weight: 500;
   color: white;
+}
+footer a {
+  color: black;
+  font-weight: 400;
 }
 a {
   text-decoration: none;
@@ -40,9 +55,14 @@ a:hover {
 button {
   transition: all 200ms ease-in-out;
 }
+#app-title {
+  font-size: 20px;
+  font-weight: 600;
+}
 #here {
   margin: 0px auto;
   margin-left: 5px;
+  font-size: 18px;
 }
 #here:hover {
   background-color: rgba(236, 236, 236, 0);
@@ -104,6 +124,7 @@ button {
 }
 .weekly {
   border: solid 1px black;
+  border-left: none;
   border-radius: 4px;
   text-align: center;
   background-color: rgba(236, 236, 236, 0.6);
@@ -120,8 +141,14 @@ button {
 .hourly {
   text-align: center;
 }
+.temperature-daily-hourly {
+  font-size: 18px;
+}
+.temperature-daily {
+  font-size: 20px;
+}
 .time-date {
   color: white;
   text-align: left;
-  font-weight: 500;
+  font-weight: 400;
 }

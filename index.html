@@ -30,175 +30,142 @@
         <source src="media/rainy-vid.mp4" type="video/webm" />
         <source src="media/rainy-vid.mp4" type="video/mp4" />
       </video>
-    </div>
-    <header class="viewport-header">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <nav class="navbar navbar-light shadow-lg">
-              <div class="container-fluid">
-                <a class="navbar-brand">Today's Weather</a>
-                <form class="d-flex" id="search-form">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search for a city"
-                    aria-label="Search"
-                    id="search-city"
-                    autofocus
-                    autocomplete="off"
-                  />
-                  <button class="btn btn-outline-dark" type="submit">
-                    Search
-                  </button>
-                  <button type="button" class="btn btn-dark" id="here">
-                    Here!
-                  </button>
-                </form>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <div class="row gy-2">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 daily shadow-lg">
-                <div class="row">
-                  <div class="col-md-8 info">
-                    <div class="search-today">
-                      <h1 id="city">_______</h1>
-                      <h2 id="number">
-                        <span id="temp-number">___</span>
-                        <span class="units">
-                          <a href="#" id="celsius" class="active">°C</a> |
-                          <a href="#" id="fahrenheit">°F</a>
-                        </span>
-                      </h2>
-                      <h3 id="description">__________</h3>
-                      <ul>
-                        <li class="Precipitation">
-                          Precipitation: <span id="precipitation">--</span> mm
-                        </li>
-                        <li class="Humidity">
-                          Humidity: <span id="humidity">___</span>%
-                        </li>
-                        <li class="Wind">
-                          Wind: <span id="wind"> ___ </span> m/s
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <img src="" alt="" id="weather-icon-now" />
-                  </div>
-                </div>
-                <div class="row hourly">
-                  <div class="col">
-                    <h6>2:00 PM</h6>
-                    <div class="weather-icon-hourly">
-                      <i class="fas fa-cloud-sun-rain"></i>
-                    </div>
-                    <div class="temperature-daily-hourly">27°</div>
-                  </div>
-                  <div class="col">
-                    <h6>5:00 PM</h6>
-                    <div class="weather-icon-hourly">
-                      <i class="fas fa-cloud-sun-rain"></i>
-                    </div>
-                    <div class="temperature-daily-hourly">25°</div>
-                  </div>
-                  <div class="col">
-                    <h6>8:00 PM</h6>
-                    <div class="weather-icon-hourly">
-                      <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="temperature-daily-hourly">23°</div>
-                  </div>
-                  <div class="col">
-                    <h6>11:00 PM</h6>
-                    <div class="weather-icon-hourly">
-                      <i class="fas fa-cloud-sun"></i>
-                    </div>
-                    <div class="temperature-daily-hourly">22°</div>
-                  </div>
-                  <div class="col">
-                    <h6>2:00 AM</h6>
-                    <div class="weather-icon-hourly">
-                      <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="temperature-daily-hourly">20°</div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-md-8 weekly shadow-lg">
-                <div class="row">
-                  <div class="col-md-4 day">
-                    <h4>Tomorrow</h4>
-                    <div class="weather-icon">
-                      <i class="fas fa-cloud-sun"></i>
+      <header class="viewport-header">
+        <div class="container">
+          <div class="search-title-bar">
+            <div class="row">
+              <div class="col">
+                <nav class="navbar navbar-light shadow-lg">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" id="app-title">The Weather ☂︎</a>
+                    <form class="d-flex" id="search-form">
+                      <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search for a city"
+                        aria-label="Search"
+                        id="search-city"
+                        autofocus
+                        autocomplete="off"
+                      />
+                      <button class="btn btn-outline-dark" type="submit">
+                        Search
+                      </button>
+                      <button type="button" class="btn btn-dark" id="here">
+                        ⚐
+                      </button>
+                    </form>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="row gy-2">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 daily shadow-lg">
+                  <div class="row">
+                    <div class="col-md-8 info">
+                      <div class="search-today">
+                        <h1 id="city">_______</h1>
+                        <h2 id="number">
+                          <span id="temp-number">____</span>
+                          <span class="units">
+                            <a href="#" id="celsius" class="active">°C</a> |
+                            <a href="#" id="fahrenheit">°F</a>
+                          </span>
+                        </h2>
+                        <h3 id="description">___</h3>
+                        <ul>
+                          <li class="Precipitation">
+                            Precipitation: <span id="precipitation">--</span> mm
+                          </li>
+                          <li class="Humidity">
+                            Humidity: <span id="humidity">___</span>%
+                          </li>
+                          <li class="Wind">
+                            Wind: <span id="wind"> ___ </span> m/s
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="temperature-daily">27°|14°</div>
-                  </div>
-                  <div class="col-md-4 day">
-                    <h4>Monday</h4>
-                    <div class="weather-icon"><i class="fas fa-sun"></i></div>
-                    <div class="temperature-daily">27°|15°</div>
-                  </div>
-                  <div class="col-md-4 day">
-                    <h4>Tuesday</h4>
-                    <div class="weather-icon">
-                      <i class="fas fa-cloud"></i>
+                    <div class="col-md-4">
+                      <img src="" alt="" id="weather-icon-now" />
                     </div>
-                    <div class="temperature-daily">27°|15°</div>
                   </div>
+                  <div id="hourly-weather"></div>
                 </div>
-                <div class="row">
-                  <div class="col-md-4 day">
-                    <h4>Wednesday</h4>
-                    <div class="weather-icon">
-                      <i class="fas fa-cloud-sun-rain"></i>
+
+                <div class="col-md-8 weekly shadow-lg">
+                  <div class="row">
+                    <div class="col-md-4 day">
+                      <h4>Tomorrow</h4>
+                      <div class="weather-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                      </div>
+                      <div class="temperature-daily">27°|14°</div>
                     </div>
-                    <div class="temperature-daily">28°|16°</div>
+                    <div class="col-md-4 day">
+                      <h4>Monday</h4>
+                      <div class="weather-icon"><i class="fas fa-sun"></i></div>
+                      <div class="temperature-daily">27°|15°</div>
+                    </div>
+                    <div class="col-md-4 day">
+                      <h4>Tuesday</h4>
+                      <div class="weather-icon">
+                        <i class="fas fa-cloud"></i>
+                      </div>
+                      <div class="temperature-daily">27°|15°</div>
+                    </div>
                   </div>
-                  <div class="col-md-4 day">
-                    <h4>Thursday</h4>
-                    <div class="weather-icon">
-                      <i class="fas fa-cloud"></i>
+                  <div class="row">
+                    <div class="col-md-4 day">
+                      <h4>Wednesday</h4>
+                      <div class="weather-icon">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                      </div>
+                      <div class="temperature-daily">28°|16°</div>
                     </div>
-                    <div class="temperature-daily">26°|15°</div>
-                  </div>
-                  <div class="col-md-4 day">
-                    <h4>Friday</h4>
-                    <div class="weather-icon">
-                      <i class="fas fa-cloud-sun"></i>
+                    <div class="col-md-4 day">
+                      <h4>Thursday</h4>
+                      <div class="weather-icon">
+                        <i class="fas fa-cloud"></i>
+                      </div>
+                      <div class="temperature-daily">26°|15°</div>
                     </div>
-                    <div class="temperature-daily">26°|15°</div>
+                    <div class="col-md-4 day">
+                      <h4>Friday</h4>
+                      <div class="weather-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                      </div>
+                      <div class="temperature-daily">26°|15°</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 time-date">
-            <span id="date"></span>
-            <span id="time"></span>
-            <span id="timeUpdate"> Last updated</span>
+          <div class="row">
+            <div class="col-md-6 time-date">
+              <span id="date"></span>
+              <span id="time"></span>
+              <span id="timeUpdate"> Last updated</span>
+            </div>
+            <div class="col-md-6">
+              <footer>
+                <p>
+                  <a href="https://github.com/CanGene/Weather-App" id="credit">
+                    Open-source code
+                  </a>
+                  <span> by Candace Genesis </span>
+                </p>
+              </footer>
+            </div>
           </div>
-          <div class="col-md-6">
-            <footer>
-              <p>
-                <a href="https://github.com/CanGene/Weather-App" id="credit">
-                  Open-source code
-                </a>
-                <span> by Candace Genesis </span>
-              </p>
-            </footer>
-          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>

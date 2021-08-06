@@ -53,6 +53,27 @@ function showCityTemperature(response) {
   }
 }
 
+function showHourlyForecast() {
+  let hourlyTemp = document.querySelector("#hourly-weather");
+  let hours = ["2:00", "5:00", "8:00", "11:00", "2:00"];
+  let hourlyForecast = `<div class="row hourly">`;
+  hours.forEach(function (hour) {
+    hourlyForecast =
+      hourlyForecast +
+      `<div class="col">
+    <h6>${hour}</h6>
+    <div class="weather-icon-hourly">
+    <i class="fas fa-cloud-sun-rain"></i>
+    </div>
+    <div class="temperature-daily-hourly">27°</div>
+    </div>`;
+  });
+
+  hourlyForecast = hourlyForecast + `</div>`;
+  hourlyTemp.innerHTML = hourlyForecast;
+}
+showHourlyForecast();
+
 function toFahrenheit(event) {
   event.preventDefault();
   celLink.classList.remove("active");
