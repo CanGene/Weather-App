@@ -26,8 +26,13 @@ function displayDay() {
 }
 displayDay();
 
+function getForecast(coordinates) {
+  let apiKey = `4a9fc63d5c00d460d1556f4ff9c82bf2`;
+  let apiUrlHourly = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=alerts,minutely&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlHourly).then(showHourlyForecast);
+  axios.get(apiUrlHourly).then(showWeeklyForecast);
+}
 function showCityTemperature(response) {
-  console.log(response);
   let displayName = `${response.data.name}`;
   let city = document.querySelector("#city");
   cityTemp = Math.round(response.data.main.temp);
@@ -46,33 +51,55 @@ function showCityTemperature(response) {
   nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
-  if (precipitation === undefined) {
-    precipitation.innerHTML = `--`;
-  } else {
-    precipitation.innerHTML = `${response.data.rain["1h"]}`;
-  }
+
+  getForecast(response.data.coord);
 }
 
-function showHourlyForecast() {
+function showHourlyForecast(response) {
+  console.log(response.data.hourly);
   let hourlyTemp = document.querySelector("#hourly-weather");
-  let hours = ["2:00", "5:00", "8:00", "11:00", "2:00"];
+
   let hourlyForecast = `<div class="row hourly">`;
-  hours.forEach(function (hour) {
+  hours.forEach(function (forecastHour) {
     hourlyForecast =
       hourlyForecast +
       `<div class="col">
-    <h6>${hour}</h6>
+    <h6>${forecastHour}</h6>
     <div class="weather-icon-hourly">
     <i class="fas fa-cloud-sun-rain"></i>
     </div>
-    <div class="temperature-daily-hourly">27°</div>
+    <div class="temperature-daily-hourly"></div>
     </div>`;
   });
 
   hourlyForecast = hourlyForecast + `</div>`;
   hourlyTemp.innerHTML = hourlyForecast;
 }
-showHourlyForecast();
+
+function showWeeklyForecast(response) {
+  console.log(response.data.daily);
+  let weeklyTemp = document.querySelector("#weekly");
+
+  let weeklyForecast = `<div class="row">`;
+  days.forEach(function (forecastDay) {
+    weeklyForecast =
+      weeklyForecast +
+      `<div class="col-md-4 day">
+                      <h4>${forecastDay}</h4>
+                      <div class="weather-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                      </div>
+                      <div class="temperature-daily">
+                      <span id="high">12</span>
+                      |
+                      <span id="low">12</span>
+                      </div>
+                    </div>`;
+  });
+
+  weeklyForecast = weeklyForecast + `</div>`;
+  weeklyTemp.innerHTML = weeklyForecast;
+}
 
 function toFahrenheit(event) {
   event.preventDefault();
@@ -111,6 +138,7 @@ function showCurrentLocation(position) {
   let apiUrlHere = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlHere).then(showCityTemperature);
 }
+
 function clickHere(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
