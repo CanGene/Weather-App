@@ -35,11 +35,35 @@ function formatDay(timestamp) {
 }
 function formatHour(timestamp) {
   let time = new Date(timestamp * 1000);
-  let hours = time.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  return time[hours];
+  let hour = time.getHours();
+  let hours = [
+    "12 AM",
+    "1 AM",
+    "2 AM",
+    "3 AM",
+    "4 AM",
+    "5 AM",
+    "6 AM",
+    "7 AM",
+    "8 AM",
+    "9 AM",
+    "10 AM",
+    "11 AM",
+    "12 PM",
+    "1 PM",
+    "2 PM",
+    "3 PM",
+    "4 PM",
+    "5 PM",
+    "6 PM",
+    "7 PM",
+    "8 PM",
+    "9 PM",
+    "10 PM",
+    "11 PM",
+  ];
+
+  return hours[hour];
 }
 
 function getForecast(coordinates) {
@@ -88,7 +112,7 @@ function showHourlyForecast(response) {
       forecastHour.weather[0].icon
     }@2x.png" alt="">
     </div>
-    <div class="temperature-daily-hourly">${forecastHour.temp}</div>
+    <div class="temperature-daily-hourly">${Math.round(forecastHour.temp)}</div>
     </div>`;
     }
   });
@@ -113,9 +137,13 @@ function showWeeklyForecast(response) {
                         }@2x.png" alt="">
                       </div>
                       <div class="temperature-daily">
-                      <span id="high">${Math.round(forecastDay.temp.max)}</span>
+                      <span class="high">${Math.round(
+                        forecastDay.temp.max
+                      )}</span>
                       |
-                      <span id="low">${Math.round(forecastDay.temp.min)}</span>
+                      <span class="low">${Math.round(
+                        forecastDay.temp.min
+                      )}</span>
                       </div>
                     </div>`;
     }
