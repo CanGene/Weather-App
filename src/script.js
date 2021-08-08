@@ -26,6 +26,22 @@ function displayDay() {
 }
 displayDay();
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
+function formatHour(timestamp) {
+  let time = new Date(timestamp * 1000);
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  return time[hours];
+}
+
 function getForecast(coordinates) {
   let apiKey = `4a9fc63d5c00d460d1556f4ff9c82bf2`;
   let apiUrlHourly = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=alerts,minutely&appid=${apiKey}&units=metric`;
@@ -56,20 +72,25 @@ function showCityTemperature(response) {
 }
 
 function showHourlyForecast(response) {
-  console.log(response.data.hourly);
+  console.log(response);
+  let hourly = response.data.hourly;
   let hourlyTemp = document.querySelector("#hourly-weather");
-
   let hourlyForecast = `<div class="row hourly">`;
-  hours.forEach(function (forecastHour) {
-    hourlyForecast =
-      hourlyForecast +
-      `<div class="col">
-    <h6>${forecastHour}</h6>
-    <div class="weather-icon-hourly">
-    <i class="fas fa-cloud-sun-rain"></i>
+  hourly.forEach(function (forecastHour, index) {
+    if (index < 5) {
+      hourlyForecast =
+        hourlyForecast +
+        `<div class="col">
+    <h6>${formatHour(forecastHour.dt)}</h6>
+    <div >
+    <img class="weather-icon-hourly"
+    src="http://openweathermap.org/img/wn/${
+      forecastHour.weather[0].icon
+    }@2x.png" alt="">
     </div>
-    <div class="temperature-daily-hourly"></div>
+    <div class="temperature-daily-hourly">${forecastHour.temp}</div>
     </div>`;
+    }
   });
 
   hourlyForecast = hourlyForecast + `</div>`;
@@ -77,24 +98,27 @@ function showHourlyForecast(response) {
 }
 
 function showWeeklyForecast(response) {
-  console.log(response.data.daily);
+  let daily = response.data.daily;
   let weeklyTemp = document.querySelector("#weekly");
-
   let weeklyForecast = `<div class="row">`;
-  days.forEach(function (forecastDay) {
-    weeklyForecast =
-      weeklyForecast +
-      `<div class="col-md-4 day">
-                      <h4>${forecastDay}</h4>
+  daily.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      weeklyForecast =
+        weeklyForecast +
+        `<div class="col-md-4 day">
+                      <h4>${formatDay(forecastDay.dt)}</h4>
                       <div class="weather-icon">
-                        <i class="fas fa-cloud-sun"></i>
+                        <img src="http://openweathermap.org/img/wn/${
+                          forecastDay.weather[0].icon
+                        }@2x.png" alt="">
                       </div>
                       <div class="temperature-daily">
-                      <span id="high">12</span>
+                      <span id="high">${Math.round(forecastDay.temp.max)}</span>
                       |
-                      <span id="low">12</span>
+                      <span id="low">${Math.round(forecastDay.temp.min)}</span>
                       </div>
                     </div>`;
+    }
   });
 
   weeklyForecast = weeklyForecast + `</div>`;

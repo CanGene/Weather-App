@@ -9,6 +9,7 @@ video {
   position: fixed;
   top: 0;
   left: 0;
+  filter: grayscale(100%);
 }
 h1 {
   font-weight: 500;
@@ -84,11 +85,11 @@ button {
   filter: grayscale(100%);
 }
 #weekly {
-  border: solid 1px black;
+  border: solid 1px #ec6e4b;
   border-left: none;
   border-radius: 4px;
   text-align: center;
-  background-color: rgba(236, 236, 236, 0.6);
+  background-color: rgba(236, 236, 236, 0.8);
 }
 .viewport-header {
   position: relative;
@@ -106,16 +107,16 @@ button {
 }
 .navbar {
   border-radius: 4px;
-  border: solid 1px black;
+  border: solid 1px #ec6e4b;
   margin-bottom: 20px;
-  background-color: rgba(236, 236, 236, 0.6);
+  background-color: rgba(236, 236, 236, 0.8);
   font-weight: 600;
 }
 .daily {
   padding: 20px;
-  border: solid 1px black;
+  border: solid 1px #ec6e4b;
   border-radius: 4px;
-  background-color: rgba(236, 236, 236, 0.6);
+  background-color: rgba(236, 236, 236, 0.8);
   text-align: left;
 }
 .units {
@@ -139,7 +140,7 @@ button {
   font-size: 50px;
 }
 .weather-icon-hourly {
-  font-size: 18px;
+  max-width: 45px;
 }
 .temperature-daily-hourly {
   font-size: 18px;
