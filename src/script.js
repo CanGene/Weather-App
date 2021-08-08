@@ -67,8 +67,8 @@ function formatHour(timestamp) {
   return hours[hour];
 }
 function changeBackground(icons) {
-  let background = document.querySelector("#bgvid");
-  let background2 = document.querySelector("#bgvid2");
+  let background = document.querySelector("#background");
+
   let backgroundSources = [
     {
       icon: "01d",
@@ -138,8 +138,8 @@ function changeBackground(icons) {
     { icon: "50n", description: "mist", bgSource: "media/mist/night.mp4" },
   ];
   let result = backgroundSources.find(({ icon }) => icon === `${icons}`);
+  console.log(result);
   background.setAttribute("src", `${result.bgSource}`);
-  background2.setAttribute("src", `${result.bgSource}`);
 }
 
 function getForecast(coordinates) {

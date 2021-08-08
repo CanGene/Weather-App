@@ -38,7 +38,7 @@ li {
   font-style: italic;
 }
 button {
-  border: #48484a;
+  border: solid 1px #48484a;
   transition: all 200ms ease-in-out;
 }
 a {
@@ -126,9 +126,12 @@ footer a {
   color: white;
   font-weight: 400;
 }
+#search {
+  color: black;
+}
 #search:hover {
-  border: #48484a;
-  background-color: #48484a;
+  border: solid 1px #48484a;
+  background-color: #ec6e4b;
 }
 #credit {
   text-decoration: none;
