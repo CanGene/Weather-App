@@ -33,6 +33,7 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
 function formatHour(timestamp) {
   let time = new Date(timestamp * 1000);
   let hour = time.getHours();
@@ -65,6 +66,81 @@ function formatHour(timestamp) {
 
   return hours[hour];
 }
+function changeBackground(icons) {
+  let background = document.querySelector("#bgvid");
+  let background2 = document.querySelector("#bgvid2");
+  let backgroundSources = [
+    {
+      icon: "01d",
+      description: "clear sky",
+      bgSource: "media/clear sky/day.mp4",
+    },
+    {
+      icon: "01n",
+      description: "clear sky",
+      bgSource: "media/clear sky/night.mp4",
+    },
+    {
+      icon: "02d",
+      description: "few clouds",
+      bgSource: "media/few clouds/day.mp4",
+    },
+    {
+      icon: "02n",
+      description: "few clouds",
+      bgSource: "media/few clouds/night.mp4",
+    },
+    {
+      icon: "03d",
+      description: "scattered clouds",
+      bgSource: "media/scattered clouds/day.mp4",
+    },
+    {
+      icon: "03n",
+      description: "scattered clouds",
+      bgSource: "media/scattered clouds.night.mp4",
+    },
+    {
+      icon: "04d",
+      description: "broken clouds",
+      bgSource: "media/broken clouds/day.mp4",
+    },
+    {
+      icon: "04n",
+      description: "broken clouds",
+      bgSource: "media/broken clouds/night.mp4",
+    },
+    {
+      icon: "09d",
+      description: "shower rain",
+      bgSource: "media/shower rain/day.mp4",
+    },
+    {
+      icon: "09n",
+      description: "shower rain",
+      bgSource: "media/shower rain/night.mp4",
+    },
+    { icon: "10d", description: "rain", bgSource: "media/rain/day.mp4" },
+    { icon: "10n", description: "rain", bgSource: "media/rain/night.mp4" },
+    {
+      icon: "11d",
+      description: "thunderstorm",
+      bgSource: "media/thunderstorm/day.mp4",
+    },
+    {
+      icon: "11n",
+      description: "thunderstorm",
+      bgSource: "media/thunderstorm/night.mp4",
+    },
+    { icon: "13d", description: "snow", bgSource: "media/snow/day.mp4" },
+    { icon: "13n", description: "snow", bgSource: "media/snow/night.mp4" },
+    { icon: "50d", description: "mist", bgSource: "media/mist/day.mp4" },
+    { icon: "50n", description: "mist", bgSource: "media/mist/night.mp4" },
+  ];
+  let result = backgroundSources.find(({ icon }) => icon === `${icons}`);
+  background.setAttribute("src", `${result.bgSource}`);
+  background2.setAttribute("src", `${result.bgSource}`);
+}
 
 function getForecast(coordinates) {
   let apiKey = `4a9fc63d5c00d460d1556f4ff9c82bf2`;
@@ -72,6 +148,7 @@ function getForecast(coordinates) {
   axios.get(apiUrlHourly).then(showHourlyForecast);
   axios.get(apiUrlHourly).then(showWeeklyForecast);
 }
+
 function showCityTemperature(response) {
   let displayName = `${response.data.name}`;
   let city = document.querySelector("#city");
@@ -91,12 +168,17 @@ function showCityTemperature(response) {
   nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
+  if (precipitation === undefined) {
+    precipitation.innerHTML = `${response.data.rain["1h"]}`;
+  } else {
+    precipitation.innerHTML = `--`;
+  }
 
   getForecast(response.data.coord);
+  changeBackground(response.data.weather[0].icon);
 }
 
 function showHourlyForecast(response) {
-  console.log(response);
   let hourly = response.data.hourly;
   let hourlyTemp = document.querySelector("#hourly-weather");
   let hourlyForecast = `<div class="row hourly">`;
@@ -131,8 +213,9 @@ function showWeeklyForecast(response) {
         weeklyForecast +
         `<div class="col-md-4 day">
                       <h4>${formatDay(forecastDay.dt)}</h4>
-                      <div class="weather-icon">
-                        <img src="http://openweathermap.org/img/wn/${
+                      <div >
+                        <img class="weather-icon-daily"
+                        src="http://openweathermap.org/img/wn/${
                           forecastDay.weather[0].icon
                         }@2x.png" alt="">
                       </div>

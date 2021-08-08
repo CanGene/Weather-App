@@ -9,7 +9,7 @@ video {
   position: fixed;
   top: 0;
   left: 0;
-  filter: grayscale(100%);
+  filter: grayscale(100%) brightness(76%);
 }
 h1 {
   font-weight: 500;
@@ -35,6 +35,16 @@ ul {
 li {
   font-weight: 400;
   list-style: none;
+  font-style: italic;
+}
+button {
+  border: #48484a;
+  transition: all 200ms ease-in-out;
+}
+a {
+  text-decoration: none;
+  color: #ec6e4b;
+  font-weight: 600;
 }
 footer {
   text-align: right;
@@ -45,53 +55,6 @@ footer a {
   color: black;
   font-weight: 400;
 }
-button {
-  transition: all 200ms ease-in-out;
-}
-#credit {
-  text-decoration: none;
-  color: #ec6e4b;
-  font-weight: 600;
-}
-#credit:hover {
-  color: white;
-  text-decoration: underline;
-}
-#app-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-#here {
-  margin: 0px auto;
-  margin-left: 5px;
-  font-size: 18px;
-}
-#here:hover {
-  background-color: rgba(236, 236, 236, 0);
-  color: black;
-}
-#description {
-  font-weight: 500;
-  text-transform: capitalize;
-}
-#time #date {
-  font-size: 12px;
-}
-#timeUpdate {
-  font-size: 10px;
-}
-#weather-icon-now {
-  font-size: 200px;
-  margin-right: 40px;
-  filter: grayscale(100%);
-}
-#weekly {
-  border: solid 1px #ec6e4b;
-  border-left: none;
-  border-radius: 4px;
-  text-align: center;
-  background-color: rgba(236, 236, 236, 0.6);
-}
 .viewport-header {
   position: relative;
   height: 100vh;
@@ -100,22 +63,23 @@ button {
   align-items: center;
   justify-content: center;
 }
+.navbar {
+  border-radius: 4px;
+  border: solid 1px white;
+  margin-bottom: 20px;
+  background-color: rgba(236, 236, 236, 0.6);
+  font-weight: 600;
+}
 .hourly {
   text-align: center;
 }
 .col {
   padding: 0;
 }
-.navbar {
-  border-radius: 4px;
-  border: solid 1px #ec6e4b;
-  margin-bottom: 20px;
-  background-color: rgba(236, 236, 236, 0.6);
-  font-weight: 600;
-}
+
 .daily {
   padding: 20px;
-  border: solid 1px #ec6e4b;
+  border: solid 1px white;
   border-radius: 4px;
   background-color: rgba(236, 236, 236, 0.6);
   text-align: left;
@@ -137,7 +101,7 @@ button {
 .day {
   margin: 20px auto;
 }
-.weather-icon {
+.weather-icon-daily {
   font-size: 50px;
 }
 .weather-icon-hourly {
@@ -150,11 +114,63 @@ button {
   font-size: 20px;
 }
 .time-date {
-  color: white;
+  color: #ec6e4b;
   text-align: left;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 18px;
+}
+.high {
+  font-weight: 500;
 }
 .low {
+  color: white;
+  font-weight: 400;
+}
+#search:hover {
+  border: #48484a;
+  background-color: #48484a;
+}
+#credit {
+  text-decoration: none;
   color: #ec6e4b;
-  font-weight: 200;
+  font-weight: 600;
+}
+#credit:hover {
+  color: white;
+  text-decoration: underline;
+}
+#app-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+#here {
+  margin: 0px auto;
+  margin-left: 5px;
+  font-size: 18px;
+  background-color: #48484a;
+}
+#here:hover {
+  background-color: rgba(236, 236, 236, 0);
+  color: black;
+}
+#description {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+#time #date {
+  font-size: 12px;
+}
+#timeUpdate {
+  font-size: 10px;
+  color: white;
+}
+#weather-icon-now {
+  margin-right: 40px;
+}
+#weekly {
+  border: solid 1px white;
+  border-left: none;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgba(236, 236, 236, 0.6);
 }

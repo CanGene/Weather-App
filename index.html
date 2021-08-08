@@ -26,9 +26,9 @@
   <link rel="stylesheet" href="src/style.css" />
   <body>
     <div class="container">
-      <video playsinline autoplay muted loop poster="media/rain.jpg" id="bgvid">
-        <source src="media/rainy-vid.mp4" type="video/webm" />
-        <source src="media/rainy-vid.mp4" type="video/mp4" />
+      <video playsinline autoplay muted loop poster="media/bg.jpg" id="bgimg">
+        <source id="bgvid src="media/rain/day.mp4" type="video/webm" /> <source
+        id="bgvid2 src="media/rain/day.mp4" type="video/mp4" />
       </video>
 
       <header class="viewport-header">
@@ -49,7 +49,11 @@
                         autofocus
                         autocomplete="off"
                       />
-                      <button class="btn btn-outline-dark" type="submit">
+                      <button
+                        class="btn btn-outline-dark"
+                        type="submit"
+                        id="search"
+                      >
                         Search
                       </button>
                       <button type="button" class="btn btn-dark" id="here">
@@ -80,7 +84,7 @@
                         <ul>
                           <li class="Precipitation">
                             Precipitation:
-                            <span id="precipitation">???????</span> mm
+                            <span id="precipitation">___</span> mm
                           </li>
                           <li class="Humidity">
                             Humidity: <span id="humidity">___</span>%
