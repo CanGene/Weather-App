@@ -131,7 +131,8 @@ footer a {
 }
 #search:hover {
   border: solid 1px #48484a;
-  background-color: #ec6e4b;
+  background-color: #48484a;
+  color: white;
 }
 #credit {
   text-decoration: none;
@@ -150,7 +151,7 @@ footer a {
   margin: 0px auto;
   margin-left: 5px;
   font-size: 18px;
-  background-color: #48484a;
+  background-color: #ec6e4b;
 }
 #here:hover {
   background-color: rgba(236, 236, 236, 0);

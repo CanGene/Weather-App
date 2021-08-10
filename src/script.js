@@ -144,9 +144,9 @@ function changeBackground(icons) {
 
 function getForecast(coordinates) {
   let apiKey = `4a9fc63d5c00d460d1556f4ff9c82bf2`;
-  let apiUrlHourly = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=alerts,minutely&appid=${apiKey}&units=metric`;
-  axios.get(apiUrlHourly).then(showHourlyForecast);
-  axios.get(apiUrlHourly).then(showWeeklyForecast);
+  let apiUrlFuture = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=alerts,minutely&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlFuture).then(showHourlyForecast);
+  axios.get(apiUrlFuture).then(showWeeklyForecast);
 }
 
 function showCityTemperature(response) {
@@ -212,23 +212,19 @@ function showWeeklyForecast(response) {
       weeklyForecast =
         weeklyForecast +
         `<div class="col-md-4 day">
-                      <h4>${formatDay(forecastDay.dt)}</h4>
-                      <div >
-                        <img class="weather-icon-daily"
-                        src="http://openweathermap.org/img/wn/${
-                          forecastDay.weather[0].icon
-                        }@2x.png" alt="">
-                      </div>
-                      <div class="temperature-daily">
-                      <span class="high">${Math.round(
-                        forecastDay.temp.max
-                      )}</span>
-                      |
-                      <span class="low">${Math.round(
-                        forecastDay.temp.min
-                      )}</span>
-                      </div>
-                    </div>`;
+      <h4>${formatDay(forecastDay.dt)}</h4>
+      <div >
+      <img class="weather-icon-daily"
+      src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" alt="">
+      </div>
+      <div class="temperature-daily">
+      <span class="high">${Math.round(forecastDay.temp.max)}</span>
+        |
+        <span class="low">${Math.round(forecastDay.temp.min)}</span>
+          </div>
+          </div>`;
     }
   });
 
@@ -240,9 +236,19 @@ function toFahrenheit(event) {
   event.preventDefault();
   celLink.classList.remove("active");
   fahLink.classList.add("active");
+  let hourlyTemp = document.querySelector(".temperature-daily-hourly");
+  let highTemp = document.querySelector(".high");
+  let lowTemp = document.querySelector(".low");
   let fahrenheit = Math.round(cityTemp * 1.8 + 32);
+  let hourly = Math.round(forecastHour.temp * 1.8 + 32);
+  let dailyHigh = Math.round(forecastDay.temp.max * 1.8 + 32);
+  let dailyLow = Math.round(forecastDay.temp.min * 1.8 + 32);
   presentTemp.innerHTML = `${fahrenheit}`;
+  hourlyTemp.innerHTML = `${hourly}`;
+  highTemp.innerHTML = `${dailyHigh}`;
+  lowTemp.innerHTML = `${dailyLow}`;
 }
+
 let fahLink = document.querySelector("#fahrenheit");
 fahLink.addEventListener("click", toFahrenheit);
 
