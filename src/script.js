@@ -138,7 +138,6 @@ function changeBackground(icons) {
     { icon: "50n", description: "mist", bgSource: "media/mist/night.mp4" },
   ];
   let result = backgroundSources.find(({ icon }) => icon === `${icons}`);
-  console.log(result);
   background.setAttribute("src", `${result.bgSource}`);
 }
 
@@ -150,6 +149,7 @@ function getForecast(coordinates) {
 }
 
 function showCityTemperature(response) {
+  console.log(response);
   let displayName = `${response.data.name}`;
   let city = document.querySelector("#city");
   cityTemp = Math.round(response.data.main.temp);
@@ -168,10 +168,10 @@ function showCityTemperature(response) {
   nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${response.data.wind.speed}`;
-  if (precipitation === undefined) {
-    precipitation.innerHTML = `${response.data.rain["1h"]}`;
-  } else {
+  if (response.data.rain === undefined) {
     precipitation.innerHTML = `--`;
+  } else {
+    precipitation.innerHTML = `${response.data.rain["1h"]}`;
   }
 
   getForecast(response.data.coord);
@@ -236,17 +236,8 @@ function toFahrenheit(event) {
   event.preventDefault();
   celLink.classList.remove("active");
   fahLink.classList.add("active");
-  let hourlyTemp = document.querySelector(".temperature-daily-hourly");
-  let highTemp = document.querySelector(".high");
-  let lowTemp = document.querySelector(".low");
-  let fahrenheit = Math.round(cityTemp * 1.8 + 32);
-  let hourly = Math.round(forecastHour.temp * 1.8 + 32);
-  let dailyHigh = Math.round(forecastDay.temp.max * 1.8 + 32);
-  let dailyLow = Math.round(forecastDay.temp.min * 1.8 + 32);
-  presentTemp.innerHTML = `${fahrenheit}`;
-  hourlyTemp.innerHTML = `${hourly}`;
-  highTemp.innerHTML = `${dailyHigh}`;
-  lowTemp.innerHTML = `${dailyLow}`;
+  let fahrenheitNow = Math.round(cityTemp * 1.8 + 32);
+  presentTemp.innerHTML = `${fahrenheitNow}`;
 }
 
 let fahLink = document.querySelector("#fahrenheit");

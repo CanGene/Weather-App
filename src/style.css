@@ -29,10 +29,15 @@ h5 {
   line-height: 1.5;
   font-size: 18px;
 }
+h6 {
+  font-size: 18px;
+}
 ul {
   padding-left: 0;
+  padding-bottom: 20px;
 }
 li {
+  font-size: 16px;
   font-weight: 400;
   list-style: none;
   font-style: italic;
@@ -76,7 +81,6 @@ footer a {
 .col {
   padding: 0;
 }
-
 .daily {
   padding: 20px;
   border: solid 1px white;
