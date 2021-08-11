@@ -11,54 +11,8 @@ video {
   left: 0;
   filter: grayscale(100%) brightness(76%);
 }
-h1 {
-  font-weight: 500;
-}
-h2 {
-  font-weight: 500;
-}
-h3 {
-  font-weight: 400;
-  line-height: 1.5;
+.col {
   padding: 0;
-}
-h4 {
-  font-weight: 500;
-}
-h5 {
-  line-height: 1.5;
-  font-size: 18px;
-}
-h6 {
-  font-size: 18px;
-}
-ul {
-  padding-left: 0;
-  padding-bottom: 20px;
-}
-li {
-  font-size: 16px;
-  font-weight: 400;
-  list-style: none;
-  font-style: italic;
-}
-button {
-  border: solid 1px #48484a;
-  transition: all 200ms ease-in-out;
-}
-a {
-  text-decoration: none;
-  color: #ec6e4b;
-  font-weight: 600;
-}
-footer {
-  text-align: right;
-  font-weight: 500;
-  color: white;
-}
-footer a {
-  color: black;
-  font-weight: 400;
 }
 .viewport-header {
   position: relative;
@@ -75,11 +29,31 @@ footer a {
   background-color: rgba(236, 236, 236, 0.6);
   font-weight: 600;
 }
-.hourly {
-  text-align: center;
+button {
+  border: solid 1px #48484a;
+  transition: all 200ms ease-in-out;
 }
-.col {
-  padding: 0;
+#app-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+#search {
+  color: black;
+}
+#search:hover {
+  border: solid 1px #48484a;
+  background-color: #48484a;
+  color: white;
+}
+#here {
+  margin: 0px auto;
+  margin-left: 5px;
+  font-size: 18px;
+  background-color: #ec6e4b;
+}
+#here:hover {
+  background-color: rgba(236, 236, 236, 0);
+  color: black;
 }
 .daily {
   padding: 20px;
@@ -95,18 +69,46 @@ footer a {
   line-height: 28px;
   font-weight: 800;
 }
-.units .active {
-  color: black;
-  cursor: default;
+#weather-icon-now {
+  margin-right: 40px;
 }
-.units .active:hover {
-  text-decoration: none;
+h1 {
+  font-weight: 500;
 }
-.day {
-  margin: 20px auto;
+h2 {
+  font-weight: 500;
 }
-.weather-icon-daily {
-  font-size: 50px;
+h3 {
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0;
+}
+#description {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+ul {
+  padding-left: 0;
+  padding-bottom: 20px;
+}
+li {
+  font-size: 16px;
+  font-weight: 400;
+  list-style: none;
+  font-style: italic;
+}
+h4 {
+  font-weight: 500;
+}
+h5 {
+  line-height: 1.5;
+  font-size: 18px;
+}
+h6 {
+  font-size: 18px;
+}
+.hourly {
+  text-align: center;
 }
 .weather-icon-hourly {
   max-width: 45px;
@@ -114,8 +116,42 @@ footer a {
 .temperature-daily-hourly {
   font-size: 18px;
 }
+#weekly {
+  border: solid 1px white;
+  border-left: none;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgba(236, 236, 236, 0.6);
+}
+.day {
+  margin: 20px auto;
+}
+.weather-icon-daily {
+  font-size: 50px;
+}
 .temperature-daily {
   font-size: 20px;
+}
+.high {
+  font-weight: 500;
+}
+.low {
+  color: #48484a;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: #ec6e4b;
+  font-weight: 600;
+}
+footer {
+  text-align: right;
+  font-weight: 500;
+  color: white;
+}
+footer a {
+  color: black;
+  font-weight: 400;
 }
 .time-date {
   color: #ec6e4b;
@@ -123,19 +159,11 @@ footer a {
   font-weight: 500;
   font-size: 18px;
 }
-.high {
-  font-weight: 500;
+#time #date {
+  font-size: 12px;
 }
-.low {
-  color: white;
-  font-weight: 400;
-}
-#search {
-  color: black;
-}
-#search:hover {
-  border: solid 1px #48484a;
-  background-color: #48484a;
+#timeUpdate {
+  font-size: 10px;
   color: white;
 }
 #credit {
@@ -146,39 +174,4 @@ footer a {
 #credit:hover {
   color: white;
   text-decoration: underline;
-}
-#app-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-#here {
-  margin: 0px auto;
-  margin-left: 5px;
-  font-size: 18px;
-  background-color: #ec6e4b;
-}
-#here:hover {
-  background-color: rgba(236, 236, 236, 0);
-  color: black;
-}
-#description {
-  font-weight: 500;
-  text-transform: capitalize;
-}
-#time #date {
-  font-size: 12px;
-}
-#timeUpdate {
-  font-size: 10px;
-  color: white;
-}
-#weather-icon-now {
-  margin-right: 40px;
-}
-#weekly {
-  border: solid 1px white;
-  border-left: none;
-  border-radius: 4px;
-  text-align: center;
-  background-color: rgba(236, 236, 236, 0.6);
 }
