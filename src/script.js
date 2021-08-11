@@ -232,26 +232,6 @@ function showWeeklyForecast(response) {
   weeklyTemp.innerHTML = weeklyForecast;
 }
 
-function toFahrenheit(event) {
-  event.preventDefault();
-  celLink.classList.remove("active");
-  fahLink.classList.add("active");
-  let fahrenheitNow = Math.round(cityTemp * 1.8 + 32);
-  presentTemp.innerHTML = `${fahrenheitNow}`;
-}
-
-let fahLink = document.querySelector("#fahrenheit");
-fahLink.addEventListener("click", toFahrenheit);
-
-function toCelsius(event) {
-  event.preventDefault();
-  celLink.classList.add("active");
-  fahLink.classList.remove("active");
-  presentTemp.innerHTML = cityTemp;
-}
-let celLink = document.querySelector("#celsius");
-celLink.addEventListener("click", toCelsius);
-
 let cityTemp = null;
 
 function showCity(event) {
