@@ -98,7 +98,7 @@ function changeBackground(icons) {
     {
       icon: "03n",
       description: "scattered clouds",
-      bgSource: "media/scattered clouds.night.mp4",
+      bgSource: "media/scattered clouds/night.mp4",
     },
     {
       icon: "04d",
@@ -149,7 +149,6 @@ function getForecast(coordinates) {
 }
 
 function showCityTemperature(response) {
-  console.log(response);
   let displayName = `${response.data.name}`;
   let city = document.querySelector("#city");
   cityTemp = Math.round(response.data.main.temp);
@@ -183,10 +182,10 @@ function showHourlyForecast(response) {
   let hourlyTemp = document.querySelector("#hourly-weather");
   let hourlyForecast = `<div class="row hourly">`;
   hourly.forEach(function (forecastHour, index) {
-    if (index < 5) {
+    if (index < 8) {
       hourlyForecast =
         hourlyForecast +
-        `<div class="col">
+        `<div class="col-sm hour">
     <h6>${formatHour(forecastHour.dt)}</h6>
     <div >
     <img class="weather-icon-hourly"
@@ -208,10 +207,10 @@ function showWeeklyForecast(response) {
   let weeklyTemp = document.querySelector("#weekly");
   let weeklyForecast = `<div class="row">`;
   daily.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       weeklyForecast =
         weeklyForecast +
-        `<div class="col-md-4 day">
+        `<div class="col-sm day">
       <h4>${formatDay(forecastDay.dt)}</h4>
       <div >
       <img class="weather-icon-daily"

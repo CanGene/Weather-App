@@ -26,104 +26,99 @@
   <link rel="stylesheet" href="src/style.css" />
   <body>
     <div class="container">
-      <video
-        playsinline
-        autoplay
-        muted
-        loop
-        poster="media/bg.jpg"
-        id="background"
-      >
+      <video playsinline autoplay muted loop poster="" id="background">
         <source src=" type="video/webm" /> <source src=" type="video/mp4" />
       </video>
 
       <header class="viewport-header">
         <div class="container">
-          <div class="search-title-bar">
-            <div class="row">
-              <div class="col">
-                <nav class="navbar navbar-light shadow-lg">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" id="app-title">The Weather ☂︎</a>
-                    <form class="d-flex" id="search-form">
-                      <input
-                        class="form-control me-2"
-                        type="search"
-                        placeholder="Search for a city"
-                        aria-label="Search"
-                        id="search-city"
-                        autofocus
-                        autocomplete="off"
-                      />
-                      <button
-                        class="btn btn-outline-dark"
-                        type="submit"
-                        id="search"
-                      >
-                        Search
-                      </button>
-                      <button type="button" class="btn btn-dark" id="here">
-                        ⚐
-                      </button>
-                    </form>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-          <div class="row gy-2">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 daily shadow-lg">
-                  <div class="row">
-                    <div class="col-md-8 info">
-                      <div class="search-today">
-                        <h1 id="city">Burnaby</h1>
-                        <h2 id="number">
-                          <span id="temp-number">26</span>
-                          <span class="units">
-                            <span id="celsius">°C</span>
-                          </span>
-                        </h2>
-                        <h3 id="description">Overcast Clouds</h3>
-                        <ul>
-                          <li class="Precipitation">
-                            Precipitation:
-                            <span id="precipitation">___</span> mm
-                          </li>
-                          <li class="Humidity">
-                            Humidity: <span id="humidity">___</span>%
-                          </li>
-                          <li class="Wind">
-                            Wind: <span id="wind"> ___ </span> m/s
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <img src="" alt="" id="weather-icon-now" />
-                    </div>
-                  </div>
-                  <div id="hourly-weather"></div>
-                </div>
-
-                <div class="col-md-8 shadow-lg" id="weekly"></div>
-              </div>
-            </div>
-          </div>
           <div class="row">
-            <div class="col-md-6 time-date">
+            <div class="col-sm-8 search-title-bar">
+              <nav class="navbar navbar-light shadow-lg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" id="app-title">☽ Night and Day ☼</a>
+                  <form class="d-flex" id="search-form">
+                    <input
+                      class="form-control me-2"
+                      type="search"
+                      placeholder="Search for a city"
+                      aria-label="Search"
+                      id="search-city"
+                      autofocus
+                      autocomplete="off"
+                    />
+                    <button
+                      class="btn btn-outline-dark"
+                      type="submit"
+                      id="search"
+                    >
+                      Search
+                    </button>
+                    <button type="button" class="btn btn-dark" id="here">
+                      ⚐
+                    </button>
+                  </form>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row today">
+              <div class="col-sm-4 shadow-lg" id="daily">
+                <div class="row">
+                  <div class="col-sm-8 info">
+                    <h1 id="city">Burnaby</h1>
+                    <h2 id="number">
+                      <span id="temp-number">26</span>
+                      <span class="units">
+                        <span id="celsius">°C</span>
+                      </span>
+                    </h2>
+                    <h3 id="description">Overcast Clouds</h3>
+                    <ul>
+                      <li class="Precipitation">
+                        Precipitation:
+                        <span id="precipitation"></span> mm
+                      </li>
+                      <li class="Humidity">
+                        Humidity: <span id="humidity"></span>%
+                      </li>
+                      <li class="Wind">Wind: <span id="wind"></span> m/s</li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-2 icon-now">
+                    <img src="" alt="" id="weather-icon-now" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8" id="hourly">
+                <div id="hourly-weather"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 shadow-lg" id="weekly"></div>
+            </div>
+          </div>
+
+          <div class="row footer">
+            <div class="col-sm-4 time-date">
               <span id="date"></span>
               <span id="time"></span>
               <span id="timeUpdate"> Last updated</span>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm-3">
               <footer>
-                <p>
+                <p class="creditLine">
                   <a href="https://github.com/CanGene/Weather-App" id="credit">
                     Open-source code
                   </a>
-                  <span> by Candace Genesis </span>
+                  <span>by Candace Genesis</span>
                 </p>
               </footer>
             </div>
