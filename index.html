@@ -19,10 +19,6 @@
     href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <script
-    src="https://kit.fontawesome.com/7114bcf4ef.js"
-    crossorigin="anonymous"
-  ></script>
   <link rel="stylesheet" href="src/style.css" />
   <body>
     <div class="container">
@@ -64,10 +60,10 @@
           </div>
 
           <div class="container">
-            <div class="row today">
-              <div class="col-sm-4 shadow-lg" id="daily">
+            <div class="row">
+              <div class="col-sm-3 shadow-lg widget" id="daily">
                 <div class="row">
-                  <div class="col-sm-8 info">
+                  <div class="col-sm-8">
                     <h1 id="city">Burnaby</h1>
                     <h2 id="number">
                       <span id="temp-number">26</span>
@@ -76,25 +72,42 @@
                       </span>
                     </h2>
                     <h3 id="description">Overcast Clouds</h3>
-                    <ul>
-                      <li class="Precipitation">
-                        Precipitation:
-                        <span id="precipitation"></span> mm
-                      </li>
-                      <li class="Humidity">
-                        Humidity: <span id="humidity"></span>%
-                      </li>
-                      <li class="Wind">Wind: <span id="wind"></span> m/s</li>
-                    </ul>
                   </div>
-                  <div class="col-sm-2 icon-now">
+                  <div class="col-sm-4 icon-now">
                     <img src="" alt="" id="weather-icon-now" />
                   </div>
                 </div>
               </div>
+
+              <div class="col-sm-4 info">
+                <div class="row">
+                  <div class="col-sm-4 widget">
+                    <div class="Precipitation title">
+                      Precipitation:
+                      <div class="data" id="precipitation"></div>
+                      mm
+                    </div>
+                  </div>
+                  <div class="col-sm-4 widget">
+                    <div class="Humidity title">
+                      Humidity:
+                      <div class="data" id="humidity"></div>
+                      %
+                    </div>
+                  </div>
+                  <div class="col-sm-4 widget">
+                    <div class="Wind title">
+                      Wind:
+                      <div class="data" id="wind"></div>
+                      m/s
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div class="row">
-              <div class="col-sm-8" id="hourly">
+              <div class="col-sm-8 shadow-lg widget" id="hourly">
                 <div id="hourly-weather"></div>
               </div>
             </div>
@@ -102,7 +115,7 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-sm-8 shadow-lg" id="weekly"></div>
+              <div class="col-sm-8 shadow-lg widget" id="weekly"></div>
             </div>
           </div>
 
@@ -112,9 +125,9 @@
               <span id="time"></span>
               <span id="timeUpdate"> Last updated</span>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4 creditLine">
               <footer>
-                <p class="creditLine">
+                <p>
                   <a href="https://github.com/CanGene/Weather-App" id="credit">
                     Open-source code
                   </a>
