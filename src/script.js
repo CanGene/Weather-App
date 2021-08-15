@@ -162,7 +162,7 @@ function showCityTemperature(response) {
   description.innerHTML = `${response.data.weather[0].description}`;
   nowIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   humidity.innerHTML = `${response.data.main.humidity}`;
@@ -189,7 +189,7 @@ function showHourlyForecast(response) {
     <h6>${formatHour(forecastHour.dt)}</h6>
     <div >
     <img class="weather-icon-hourly"
-    src="http://openweathermap.org/img/wn/${
+    src="https://openweathermap.org/img/wn/${
       forecastHour.weather[0].icon
     }@2x.png" alt="">
     </div>
@@ -214,7 +214,7 @@ function showWeeklyForecast(response) {
       <h4>${formatDay(forecastDay.dt)}</h4>
       <div >
       <img class="weather-icon-daily"
-      src="http://openweathermap.org/img/wn/${
+      src="https://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
       }@2x.png" alt="">
       </div>
