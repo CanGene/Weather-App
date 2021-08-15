@@ -125,6 +125,12 @@ li {
 .data {
   font-size: 16px;
 }
+.above {
+  border-bottom: none;
+}
+.below {
+  margin-bottom: 20px;
+}
 h4 {
   font-weight: 500;
 }

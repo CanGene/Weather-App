@@ -236,6 +236,7 @@ let cityTemp = null;
 function showCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#search-city");
+  let apiKey = `46f617ff1cfb14ff0e8b5c0c2856ffbd`;
   let apiUrlSearch = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlSearch).then(showCityTemperature);
 }
@@ -263,4 +264,4 @@ function clickHere(event) {
 let hereButton = document.querySelector("#here");
 hereButton.addEventListener("click", clickHere);
 
-search("Burnaby");
+search("London");
