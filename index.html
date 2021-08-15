@@ -29,8 +29,8 @@
       <header class="viewport-header">
         <div class="container">
           <div class="row">
-            <div class="col-sm-8 search-title-bar">
-              <nav class="navbar navbar-light shadow-lg">
+            <div class="col-sm-12 search-title-bar">
+              <nav class="navbar navbar-light shadow-lg widget">
                 <div class="container-fluid">
                   <a class="navbar-brand" id="app-title">☽ Night and Day ☼</a>
                   <form class="d-flex" id="search-form">
@@ -61,7 +61,7 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-sm-3 shadow-lg widget" id="daily">
+              <div class="col-sm-6 shadow-lg widget" id="daily">
                 <div class="row">
                   <div class="col-sm-8">
                     <h1 id="city">Burnaby</h1>
@@ -79,61 +79,87 @@
                 </div>
               </div>
 
-              <div class="col-sm-4 info">
+              <div class="col-sm-6 info">
                 <div class="row">
-                  <div class="col-sm-4 widget">
+                  <div class="col-sm-4 mini widget">
                     <div class="Precipitation title">
                       Precipitation:
                       <div class="data" id="precipitation"></div>
-                      mm
+                      <small> mm</small>
                     </div>
                   </div>
-                  <div class="col-sm-4 widget">
+                  <div class="col-sm-4 mini widget">
                     <div class="Humidity title">
                       Humidity:
                       <div class="data" id="humidity"></div>
-                      %
+                      <small>%</small>
                     </div>
                   </div>
-                  <div class="col-sm-4 widget">
+                  <div class="col-sm-4 mini widget">
                     <div class="Wind title">
                       Wind:
                       <div class="data" id="wind"></div>
-                      m/s
+                      <small> m/s</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-4 mini widget">
+                    <div class="UVI title">
+                      UVI:
+                      <div class="data" id="wind"></div>
+                      <small> m/s</small>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 mini widget">
+                    <div class="Sunrise title">
+                      Wind:
+                      <div class="data" id="wind"></div>
+                      <small> m/s</small>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 mini widget">
+                    <div class="Sunset title">
+                      Wind:
+                      <div class="data" id="wind"></div>
+                      <small> m/s</small>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="row">
-              <div class="col-sm-8 shadow-lg widget" id="hourly">
+              <div class="col-sm-12 shadow-lg widget" id="hourly">
                 <div id="hourly-weather"></div>
               </div>
             </div>
-          </div>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-8 shadow-lg widget" id="weekly"></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12 shadow-lg widget" id="weekly"></div>
+              </div>
             </div>
-          </div>
 
-          <div class="row footer">
-            <div class="col-sm-4 time-date">
-              <span id="date"></span>
-              <span id="time"></span>
-              <span id="timeUpdate"> Last updated</span>
-            </div>
-            <div class="col-sm-4 creditLine">
-              <footer>
-                <p>
-                  <a href="https://github.com/CanGene/Weather-App" id="credit">
-                    Open-source code
-                  </a>
-                  <span>by Candace Genesis</span>
-                </p>
-              </footer>
+            <div class="row footer">
+              <div class="col-sm-6 time-date">
+                <span id="date"></span>
+                <span id="time"></span>
+                <span id="timeUpdate"> Last updated</span>
+              </div>
+              <div class="col-sm-6 creditLine">
+                <footer>
+                  <p>
+                    <a
+                      href="https://github.com/CanGene/Weather-App"
+                      id="credit"
+                    >
+                      Open-source code
+                    </a>
+                    <span>by Candace Genesis</span>
+                  </p>
+                </footer>
+              </div>
             </div>
           </div>
         </div>
