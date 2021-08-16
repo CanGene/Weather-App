@@ -22,7 +22,6 @@ video {
   border: solid 1px white;
   background-color: rgba(236, 236, 236, 0.6);
 }
-
 .viewport-header {
   position: relative;
   height: 100vh;
@@ -68,6 +67,10 @@ button {
   background-color: rgba(236, 236, 236, 0);
   color: black;
 }
+.main {
+  margin: 0 auto;
+  padding: 0%;
+}
 #daily {
   padding: 20px;
   margin-bottom: 20px;
@@ -97,6 +100,7 @@ h2 {
   font-weight: 500;
 }
 h3 {
+  font-size: 20px;
   font-weight: 400;
   padding: 0;
 }
@@ -123,7 +127,7 @@ li {
   font-weight: 500;
 }
 .data {
-  font-size: 16px;
+  font-size: 18px;
 }
 .above {
   border-bottom: none;
@@ -133,12 +137,14 @@ li {
 }
 h4 {
   font-weight: 500;
+  font-size: 22px;
 }
 h5 {
   line-height: 1.5;
   font-size: 18px;
 }
 h6 {
+  font-size: 20px;
   text-align: center;
 }
 #hourly {
@@ -155,7 +161,7 @@ h6 {
   max-width: 35px;
 }
 .temperature-daily-hourly {
-  font-size: 16px;
+  font-size: 18px;
 }
 #weekly {
   text-align: center;
@@ -168,7 +174,7 @@ h6 {
   max-width: 60px;
 }
 .temperature-daily {
-  font-size: 18px;
+  font-size: 20px;
 }
 .high {
   font-weight: 500;
@@ -182,16 +188,16 @@ a {
   color: #ec6e4b;
   font-weight: 600;
 }
-.footer {
+.footerL {
   display: block;
   margin: 0 auto;
   padding: 0;
 }
-footer {
+.footerR {
   text-align: right;
   color: white;
 }
-footer a {
+.footerR a {
   color: black;
 }
 .time-date {
@@ -208,8 +214,6 @@ footer a {
   color: white;
 }
 .creditLine {
-  padding: 0%;
-  margin: 0%;
   font-size: 18px;
   font-weight: 500;
   margin-left: auto;

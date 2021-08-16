@@ -146,6 +146,7 @@ function getForecast(coordinates) {
   let apiUrlFuture = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=alerts,minutely&appid=${apiKey}&units=metric`;
   axios.get(apiUrlFuture).then(showHourlyForecast);
   axios.get(apiUrlFuture).then(showWeeklyForecast);
+  axios.get(apiUrlFuture).then(showUVI);
 }
 
 function showCityTemperature(response) {
@@ -154,9 +155,6 @@ function showCityTemperature(response) {
   cityTemp = Math.round(response.data.main.temp);
   let description = document.querySelector("#description");
   let nowIcon = document.querySelector("#weather-icon-now");
-  let humidity = document.querySelector("#humidity");
-  let wind = document.querySelector("#wind");
-  let precipitation = document.querySelector("#precipitation");
   city.innerHTML = `${displayName}`;
   presentTemp.innerHTML = `${cityTemp}`;
   description.innerHTML = `${response.data.weather[0].description}`;
@@ -165,13 +163,22 @@ function showCityTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   nowIcon.setAttribute("alt", `${response.data.weather[0].description}`);
-  humidity.innerHTML = `${response.data.main.humidity}`;
-  wind.innerHTML = `${response.data.wind.speed}`;
+
+  let feelsLike = document.querySelector("#feelsLike");
+  let precipitation = document.querySelector("#precipitation");
+  let wind = document.querySelector("#wind");
+  let humidity = document.querySelector("#humidity");
+  let pressure = document.querySelector("#pressure");
+
+  feelsLike.innerHTML = `${response.data.main.feels_like}`;
   if (response.data.rain === undefined) {
     precipitation.innerHTML = `--`;
   } else {
     precipitation.innerHTML = `${response.data.rain["1h"]}`;
   }
+  wind.innerHTML = `${response.data.wind.speed}`;
+  humidity.innerHTML = `${response.data.main.humidity}`;
+  pressure.innerHTML = `${response.data.main.pressure}`;
 
   getForecast(response.data.coord);
   changeBackground(response.data.weather[0].icon);
@@ -231,6 +238,12 @@ function showWeeklyForecast(response) {
   weeklyTemp.innerHTML = weeklyForecast;
 }
 
+function showUVI(response) {
+  console.log(response);
+  let uvi = document.querySelector("#uvi");
+  uvi.innerHTML = `${response.data.current.uvi}`;
+}
+
 function showCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#search-city");
@@ -262,4 +275,4 @@ function clickHere(event) {
 let hereButton = document.querySelector("#here");
 hereButton.addEventListener("click", clickHere);
 
-search("Burnaby");
+search("Nice");
