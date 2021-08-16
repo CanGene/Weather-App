@@ -261,3 +261,5 @@ function clickHere(event) {
 }
 let hereButton = document.querySelector("#here");
 hereButton.addEventListener("click", clickHere);
+
+search("London");
