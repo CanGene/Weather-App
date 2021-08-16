@@ -191,7 +191,7 @@ function showHourlyForecast(response) {
     <img class="weather-icon-hourly"
     src="https://openweathermap.org/img/wn/${
       forecastHour.weather[0].icon
-    }@2x.png" alt="">
+    }@2x.png" alt="icon">
     </div>
     <div class="temperature-daily-hourly">${Math.round(forecastHour.temp)}</div>
     </div>`;
@@ -216,7 +216,7 @@ function showWeeklyForecast(response) {
       <img class="weather-icon-daily"
       src="https://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
-      }@2x.png" alt="">
+      }@2x.png" alt="icon">
       </div>
       <div class="temperature-daily">
       <span class="high">${Math.round(forecastDay.temp.max)}</span>
@@ -230,8 +230,6 @@ function showWeeklyForecast(response) {
   weeklyForecast = weeklyForecast + `</div>`;
   weeklyTemp.innerHTML = weeklyForecast;
 }
-
-let cityTemp = null;
 
 function showCity(event) {
   event.preventDefault();
@@ -263,5 +261,3 @@ function clickHere(event) {
 }
 let hereButton = document.querySelector("#here");
 hereButton.addEventListener("click", clickHere);
-
-search("London");
