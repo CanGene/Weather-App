@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🌤 Weather App</title>
+    <title>⛅️ Under The Weather</title>
   </head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link
@@ -33,7 +33,7 @@
             <div class="col-sm-12 search-title-bar">
               <nav class="navbar navbar-light shadow-lg widget">
                 <div class="container-fluid">
-                  <a class="navbar-brand" id="app-title">☽ Night and Day ☼</a>
+                  <a class="navbar-brand" id="app-title">Under The Weather</a>
                   <form class="d-flex" id="search-form">
                     <input
                       class="form-control me-2"
@@ -60,106 +60,101 @@
             </div>
           </div>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-6 shadow-lg widget" id="daily">
-                <div class="row">
-                  <div class="col-sm-8 main">
-                    <h1 id="city">Burnaby</h1>
-                    <h2 id="number">
-                      <span id="temp-number">26</span>
-                      <span class="units">
-                        <span id="celsius">°C</span>
-                      </span>
-                    </h2>
-                  </div>
-                  <div class="col-sm-4 icon-now">
-                    <img src="" alt="" id="weather-icon-now" />
-                    <h3 id="description">Overcast Clouds</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 info">
-                <div class="row">
-                  <div class="col-sm-4 mini widget above">
-                    <div class="FeelsLike">
-                      <div class="title">Feels Like:</div>
-                      <span class="data" id="feelsLike"></span>
-                      <span> °C</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 mini widget above">
-                    <div class="Precipitation">
-                      <div class="title">Precipitation:</div>
-                      <span class="data" id="precipitation"></span>
-                      <span> mm</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 mini widget above">
-                    <div class="Wind">
-                      <div class="title">Wind:</div>
-                      <span class="data" id="wind"></span>
-                      <span> m/s</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-4 mini widget below">
-                    <div class="Humidity">
-                      <div class="title">Humidity:</div>
-                      <span class="data" id="humidity"></span>
-                      <span>%</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 mini widget below">
-                    <div class="Pressure">
-                      <div class="title">Pressure:</div>
-                      <span class="data" id="pressure"></span>
-                      <span> hPa</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 mini widget below">
-                    <div class="UVI">
-                      <div class="title">UVI:</div>
-                      <span class="data" id="uvi"></span>
-                      <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12 shadow-lg widget" id="hourly">
-                <div id="hourly-weather"></div>
-              </div>
-            </div>
-
-            <div class="container">
+          <div class="row">
+            <div class="col-sm-6 shadow-lg widget" id="daily">
               <div class="row">
-                <div class="col-sm-12 shadow-lg widget" id="weekly"></div>
+                <div class="col-sm-8 align-middle">
+                  <h1 id="city"></h1>
+                  <h2 id="number">
+                    <span id="temp-number"></span>
+                    <span class="units">
+                      <span id="celsius">°C</span>
+                    </span>
+                  </h2>
+                </div>
+                <div class="col-sm-4 iconNow">
+                  <img src="" alt="" id="weather-icon-now" />
+                  <h3 id="description"></h3>
+                </div>
               </div>
             </div>
 
-            <div class="row footerL">
-              <div class="col-sm-6 time-date">
+            <div class="col-sm-6 info">
+              <div class="row">
+                <div class="col-sm-4 mini widget above">
+                  <div class="FeelsLike">
+                    <div class="title">Feels Like:</div>
+                    <span class="data" id="feelsLike"></span>
+                    <span> °C</span>
+                  </div>
+                </div>
+                <div class="col-sm-4 mini widget above">
+                  <div class="Precipitation">
+                    <div class="title">Precipitation:</div>
+                    <span class="data" id="precipitation"></span>
+                    <span> mm</span>
+                  </div>
+                </div>
+                <div class="col-sm-4 mini widget above">
+                  <div class="Wind">
+                    <div class="title">Wind:</div>
+                    <span class="data" id="wind"></span>
+                    <span> m/s</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4 mini widget below">
+                  <div class="Humidity">
+                    <div class="title">Humidity:</div>
+                    <span class="data" id="humidity"></span>
+                    <span>%</span>
+                  </div>
+                </div>
+                <div class="col-sm-4 mini widget below">
+                  <div class="Pressure">
+                    <div class="title">Pressure:</div>
+                    <span class="data" id="pressure"></span>
+                    <span> hPa</span>
+                  </div>
+                </div>
+                <div class="col-sm-4 mini widget below">
+                  <div class="UVI">
+                    <div class="title">UVI:</div>
+                    <span class="data" id="uvi"></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 shadow-lg widget" id="hourly">
+              <div id="hourly-weather"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 shadow-lg widget" id="weekly"></div>
+          </div>
+
+          <div class="row footer">
+            <div class="col-sm-6 timeUpdate">
+              <div class="footerL">
                 <span id="date"></span>
                 <span id="time"></span>
-                <span id="timeUpdate"> Last updated</span>
+                <span id="time-update"> Last updated</span>
               </div>
-              <div class="col-sm-6 creditLine">
-                <div class="footerR">
-                  <p>
-                    <a
-                      href="https://github.com/CanGene/Weather-App"
-                      id="credit"
-                    >
-                      Open-source code
-                    </a>
-                    <span>by Candace Genesis</span>
-                  </p>
-                </div>
+            </div>
+            <div class="col-sm-6 creditLine">
+              <div class="footerR">
+                <p>
+                  <a href="https://github.com/CanGene/Weather-App" id="credit">
+                    Open-source code
+                  </a>
+                  <span>by Candace Genesis</span>
+                </p>
               </div>
             </div>
           </div>

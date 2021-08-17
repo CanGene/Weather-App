@@ -193,7 +193,7 @@ function showHourlyForecast(response) {
       hourlyForecast =
         hourlyForecast +
         `<div class="col-sm hour">
-    <h6>${formatHour(forecastHour.dt)}</h6>
+    <h5>${formatHour(forecastHour.dt)}</h5>
     <div >
     <img class="weather-icon-hourly"
     src="https://openweathermap.org/img/wn/${
@@ -275,4 +275,4 @@ function clickHere(event) {
 let hereButton = document.querySelector("#here");
 hereButton.addEventListener("click", clickHere);
 
-search("Nice");
+search("Burnaby");

@@ -10,7 +10,7 @@ video {
   position: fixed;
   top: 0;
   left: 0;
-  filter: grayscale(100%) brightness(50%);
+  filter: grayscale(100%) brightness(40%);
   z-index: -1;
 }
 .container {
@@ -18,7 +18,6 @@ video {
   padding: 0;
 }
 .widget {
-  border-radius: 4px;
   border: solid 1px white;
   background-color: rgba(236, 236, 236, 0.6);
 }
@@ -47,14 +46,14 @@ button {
 }
 #app-title {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 #search {
   color: black;
 }
 #search:hover {
   border: solid 1px #48484a;
-  background-color: #48484a;
+  background-color: #ec6e4b;
   color: white;
 }
 #here {
@@ -67,14 +66,11 @@ button {
   background-color: rgba(236, 236, 236, 0);
   color: black;
 }
-.main {
-  margin: 0 auto;
-  padding: 0%;
-}
 #daily {
   padding: 20px;
   margin-bottom: 20px;
 }
+
 #temp-number {
   font-weight: 500;
 }
@@ -86,32 +82,17 @@ button {
   font-weight: 800;
   color: #48484a;
 }
-.icon-now {
-  font-size: 50px;
-  margin-left: auto;
+.iconNow {
+  padding: 0;
 }
 #weather-icon-now {
   padding: 0;
 }
-h1 {
-  font-weight: 500;
-}
-h2 {
-  font-weight: 500;
-}
-h3 {
-  font-size: 20px;
-  font-weight: 400;
-  padding: 0;
-}
 #description {
-  font-weight: 500;
   text-transform: capitalize;
   color: #48484a;
-}
-ul {
-  padding-left: 0;
-  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
 }
 li {
   font-weight: 400;
@@ -135,30 +116,16 @@ li {
 .below {
   margin-bottom: 20px;
 }
-h4 {
-  font-weight: 500;
-  font-size: 22px;
-}
-h5 {
-  line-height: 1.5;
-  font-size: 18px;
-}
-h6 {
-  font-size: 20px;
-  text-align: center;
-}
 #hourly {
   text-align: center;
   margin-bottom: 20px;
-}
-.hourly {
-  text-align: center;
 }
 .hour {
   padding: 20px;
 }
 .weather-icon-hourly {
-  max-width: 35px;
+  max-width: 40%;
+  margin: 5px auto;
 }
 .temperature-daily-hourly {
   font-size: 18px;
@@ -171,7 +138,7 @@ h6 {
   margin: 20px auto;
 }
 .weather-icon-daily {
-  max-width: 60px;
+  max-width: 50%;
 }
 .temperature-daily {
   font-size: 20px;
@@ -188,40 +155,32 @@ a {
   color: #ec6e4b;
   font-weight: 600;
 }
-.footerL {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
+.footer {
+  font-size: 18px;
 }
 .footerR {
   text-align: right;
   color: white;
 }
-.footerR a {
-  color: black;
+.footerR p {
+  margin-bottom: 0;
 }
-.time-date {
-  color: #ec6e4b;
+.timeUpdate {
+  color: white;
   text-align: left;
-  font-weight: 500;
-  font-size: 18px;
+  padding: 0;
 }
-#time #date {
+#time-update {
   font-size: 12px;
-}
-#timeUpdate {
-  font-size: 10px;
   color: white;
 }
 .creditLine {
-  font-size: 18px;
-  font-weight: 500;
+  padding: 0;
   margin-left: auto;
 }
 #credit {
   text-decoration: none;
   color: #ec6e4b;
-  font-weight: 500;
 }
 #credit:hover {
   color: white;
