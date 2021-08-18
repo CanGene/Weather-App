@@ -10,16 +10,8 @@ video {
   position: fixed;
   top: 0;
   left: 0;
-  filter: grayscale(100%) brightness(40%);
+  filter: grayscale(100%) brightness(50%);
   z-index: -1;
-}
-.container {
-  margin: 0 auto;
-  padding: 0;
-}
-.widget {
-  border: solid 1px white;
-  background-color: rgba(236, 236, 236, 0.6);
 }
 .viewport-header {
   position: relative;
@@ -30,8 +22,8 @@ video {
   text-align: center;
   max-width: 70%;
 }
+
 .navbar {
-  border-radius: 4px;
   border: solid 1px white;
   background-color: rgba(236, 236, 236, 0.6);
   font-weight: 600;
@@ -66,24 +58,30 @@ button {
   background-color: rgba(236, 236, 236, 0);
   color: black;
 }
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+}
+.widget {
+  border: solid 1px white;
+  background-color: rgba(236, 236, 236, 0.6);
+}
 #daily {
   padding: 20px;
   margin-bottom: 20px;
 }
-
 #temp-number {
   font-weight: 500;
+  text-align: center;
 }
 .units {
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   vertical-align: top;
   line-height: 28px;
   font-weight: 800;
   color: #48484a;
-}
-.iconNow {
-  padding: 0;
 }
 #weather-icon-now {
   padding: 0;
@@ -116,12 +114,16 @@ li {
 .below {
   margin-bottom: 20px;
 }
+
 #hourly {
   text-align: center;
   margin-bottom: 20px;
 }
 .hour {
   padding: 20px;
+}
+.time-hourly {
+  font-size: 18px;
 }
 .weather-icon-hourly {
   max-width: 40%;
@@ -130,12 +132,16 @@ li {
 .temperature-daily-hourly {
   font-size: 18px;
 }
+
 #weekly {
   text-align: center;
   margin-bottom: 10px;
 }
 .day {
   margin: 20px auto;
+}
+.day-daily {
+  font-size: 22px;
 }
 .weather-icon-daily {
   max-width: 50%;
@@ -150,6 +156,7 @@ li {
   color: #48484a;
   font-weight: 400;
 }
+
 a {
   text-decoration: none;
   color: #ec6e4b;
