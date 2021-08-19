@@ -15,6 +15,12 @@ function displayTime() {
   let presentHour = now.getHours();
   let presentMinutes = now.getMinutes();
   let presentTime = document.querySelector("#time");
+  if (presentMinutes < 10) {
+    presentMinutes = `0${presentMinutes}`;
+  }
+  if (presentHour < 10) {
+    presentHour = `0${presentHour}`;
+  }
   presentTime.innerHTML = `${presentHour}:${presentMinutes}`;
 }
 displayTime();
@@ -239,7 +245,6 @@ function showWeeklyForecast(response) {
 }
 
 function showUVI(response) {
-  console.log(response);
   let uvi = document.querySelector("#uvi");
   uvi.innerHTML = `${response.data.current.uvi}`;
 }
